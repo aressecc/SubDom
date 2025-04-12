@@ -2,8 +2,7 @@
 
 **shsc** es una herramienta sencilla pero potente para descubrir subdominios de un dominio y verificar su estado HTTP. Utiliza `subfinder` para el descubrimiento de subdominios y `curl` para verificar el código de estado HTTP de esos subdominios. Además, tiene integración con **Nuclei** para hacer un escaneo de vulnerabilidades sobre los subdominios activos.
 
-![image](https://github.com/user-attachments/assets/1df6d8d4-5345-4680-9f15-81218b0b091e)
-
+![image](https://github.com/user-attachments/assets/ff4d7597-4014-4449-87e4-e049da54da64)
 ## Características
 
 - Descubre subdominios utilizando `subfinder`.
