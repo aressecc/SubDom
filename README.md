@@ -1,28 +1,32 @@
 # 🔍 Subdomain HTTP Status Checker
 
-Este es un script en Bash creado por **ARESSEC** para automatizar el proceso de descubrimiento de subdominios y verificar cuáles están activos a nivel de HTTP/HTTPS, filtrando por un código de respuesta específico como `200`, `403`, `302`, etc.
+Este es un script en Bash creado por **ARESSEC** 
 
 ![image](https://github.com/user-attachments/assets/1df6d8d4-5345-4680-9f15-81218b0b091e)
 
+**shsc** es una herramienta sencilla pero potente para descubrir subdominios de un dominio y verificar su estado HTTP. Utiliza `subfinder` para el descubrimiento de subdominios y `curl` para verificar el código de estado HTTP de esos subdominios. Además, tiene integración con **Nuclei** para hacer un escaneo de vulnerabilidades sobre los subdominios activos.
 
----
+## Características
 
-## 📦 Requisitos
+- Descubre subdominios utilizando `subfinder`.
+- Verifica el código de estado HTTP de los subdominios encontrados.
+- Filtra subdominios por un código de estado HTTP específico (e.g., 200 OK).
+- Soporta múltiples protocolos (http/https).
+- Modo **verbose** para obtener información detallada durante la ejecución.
+- Interrupción con `Ctrl+C` para pausar, cambiar el código de estado o guardar los subdominios encontrados hasta el momento.
+- Integración con **Nuclei** para escanear vulnerabilidades en los subdominios activos.
 
-Antes de ejecutar el script, asegurate de tener instaladas las siguientes herramientas:
+## Requisitos
 
-- [`subfinder`](https://github.com/projectdiscovery/subfinder) - Para enumerar subdominios.
-- [`curl`](https://curl.se/) - Para realizar peticiones HTTP/S.
-- [`figlet`](http://www.figlet.org/) - Solo para mostrar un banner bonito (opcional).
+- **subfinder**: Herramienta para descubrir subdominios.
+- **curl**: Herramienta para realizar solicitudes HTTP.
+- **figlet**: Para mostrar banners visuales.
+- **nuclei** (opcional): Para escanear vulnerabilidades en los subdominios activos.
 
-Uso.
+Puedes instalar `subfinder` y `nuclei` usando los siguientes comandos:
 
 ```bash
-git clone https://github.com/aressecc/shsc/
-cd shsc
-chmod +x shsc.sh
-./shsc.sh example.com 200
----------------------------
-Si quieres solamente los host y no la url completa usa el parametro --no-protocol
-./shsc.sh example.com 200 --no-protocol
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+
 
