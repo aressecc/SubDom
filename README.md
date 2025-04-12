@@ -12,7 +12,10 @@
 - Modo **verbose** para obtener información detallada durante la ejecución.
 - Interrupción con `Ctrl+C` para pausar, cambiar el código de estado o guardar los subdominios encontrados hasta el momento.
 - Integración con **Nuclei** para escanear vulnerabilidades en los subdominios activos.
-
+- El --no-protocol para filtrar:
+- Con protocolo:
+- https://sub.ejemplo.com
+- Sin protocolo (--no-protocol): sub.ejemplo.com
 ## Requisitos
 
 - **subfinder**: Herramienta para descubrir subdominios.
