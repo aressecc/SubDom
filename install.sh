@@ -1,67 +1,49 @@
 #!/bin/bash
 
-echo "🔍 Instalador automático de shsc"
+echo "🔍 Instalador de shsc"
 
-# Función para verificar instalación de paquetes
-check_pkg() {
-    dpkg -s "$1" &> /dev/null
-}
-
-# Verificar figlet
-if check_pkg figlet; then
-    echo "✔ figlet ya está instalado."
-else
-    echo "📦 Instalando figlet..."
-    sudo apt install -y figlet
+# Verificar si Go está instalado
+if ! command -v go &>/dev/null; then
+    echo "⚠️  Go no está instalado."
+    read -p "¿Querés continuar sin Go (no se podrá instalar subfinder y nuclei)? [s/N]: " continuar
+    if [[ "$continuar" != "s" && "$continuar" != "S" ]]; then
+        echo "Instalación cancelada."
+        exit 1
+    else
+        skip_go=true
+    fi
 fi
 
-# Verificar curl
-if check_pkg curl; then
-    echo "✔ curl ya está instalado."
-else
-    echo "📦 Instalando curl..."
-    sudo apt install -y curl
+# Verificar e instalar figlet
+if ! dpkg -s figlet &>/dev/null; then
+    echo "🛠 Instalando figlet..."
+    sudo apt update && sudo apt install figlet -y
 fi
 
-# Verificar Go
-if ! command -v go &> /dev/null; then
-    echo "❌ Go no está instalado. Por favor instalá Go desde:"
-    echo "👉 https://go.dev/doc/install"
-    exit 1
-else
-    echo "✔ Go está instalado."
+# Verificar e instalar curl
+if ! dpkg -s curl &>/dev/null; then
+    echo "🛠 Instalando curl..."
+    sudo apt update && sudo apt install curl -y
 fi
 
-# Verificar subfinder
-if ! command -v subfinder &> /dev/null; then
-    echo "📦 Instalando subfinder..."
+# Instalar subfinder si Go está disponible
+if [[ "$skip_go" != true && ! -f "$HOME/go/bin/subfinder" ]]; then
+    echo "📥 Instalando subfinder..."
     go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-else
-    echo "✔ subfinder ya está instalado."
 fi
 
-# Verificar nuclei (opcional)
-if ! command -v nuclei &> /dev/null; then
-    echo "📦 Instalando nuclei..."
+# Instalar nuclei si Go está disponible
+if [[ "$skip_go" != true && ! -f "$HOME/go/bin/nuclei" ]]; then
+    echo "📥 Instalando nuclei..."
     go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-else
-    echo "✔ nuclei ya está instalado."
 fi
 
-# Agregar $HOME/go/bin al PATH si no está
-if [[ ":$PATH:" != *":$HOME/go/bin:"* ]]; then
-    echo "🛠 Agregando \$HOME/go/bin al PATH..."
-    echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
-    source ~/.bashrc
-fi
+# Clonar el repositorio de shsc
+echo "📂 Clonando el repositorio..."
+git clone https://github.com/aressecc/shsc.git ~/shsc
 
-# Clonar repositorio
-echo "📁 Clonando repositorio shsc..."
-git clone https://github.com/aressecc/shsc.git
-cd shsc || exit
+# Dar permisos de ejecución
+chmod +x ~/shsc/shsc.sh
 
-# Permisos de ejecución
-chmod +x shsc.sh
-
-echo "✅ Instalación completada con éxito."
-echo "👉 Ejecutá la herramienta con: ./shsc.sh <dominio> <codigo_http> [--no-protocol]"
+echo -e "\n✅ Instalación completa. Podés ejecutar shsc con:"
+echo "~/shsc/shsc.sh <dominio> <codigo_http> [--no-protocol]"
