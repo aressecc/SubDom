@@ -38,7 +38,7 @@ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest           
    cd shsc
    chmod +x shsc.sh
    Uso: ./shsc.sh <dominio> <codigo_http> [--no-protocol]
-  ./shsc.sh example.com 200
+
   
 
 
