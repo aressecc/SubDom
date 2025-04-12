@@ -25,7 +25,7 @@
 
 Puedes instalar `subfinder` y `nuclei` usando los siguientes comandos, obvio teniendo go instalado:
 
-```bash
+
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest     # OPCIONAL (solo si se requiere instalar)
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest           # OPCIONAL (solo si se requiere instalar)
 
