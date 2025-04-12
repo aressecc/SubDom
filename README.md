@@ -46,3 +46,24 @@ Esto es útil para integrarse con otras herramientas como `ffuf`, `nuclei`, o pa
 ```bash
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+
+🛠 Instalación automática
+Podés instalar shsc fácilmente con el siguiente comando:
+
+bash
+Copiar
+Editar
+curl -sSL https://raw.githubusercontent.com/aressecc/shsc/main/install.sh | bash
+Este instalador:
+
+Verifica si tenés instalados figlet, curl, subfinder, y nuclei.
+
+Comprueba si Go está instalado.
+
+Clona el repositorio oficial de shsc.
+
+Le da permisos de ejecución al script principal shsc.sh.
+
+⚠️ Nota: Asegurate de tener instalado Go previamente, ya que subfinder y nuclei se instalan con go install.
+
+
