@@ -22,3 +22,7 @@ git clone https://github.com/aressecc/shsc/
 cd shsc
 chmod +x shsc.sh
 ./shsc.sh example.com 200
+---------------------------
+Si quieres solamente los host y no la url completa usa el parametro --no-protocol
+./shsc.sh example.com 200 --no-protocol
+
