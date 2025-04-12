@@ -15,8 +15,10 @@ Antes de ejecutar el script, asegurate de tener instaladas las siguientes herram
 - [`curl`](https://curl.se/) - Para realizar peticiones HTTP/S.
 - [`figlet`](http://www.figlet.org/) - Solo para mostrar un banner bonito (opcional).
 
-Podés instalarlas en sistemas basados en Debian con:
+Uso.
 
 ```bash
-sudo apt install curl figlet
-GO111MODULE=on go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+git clone https://github.com/aressecc/shsc/
+cd shsc
+chmod +x shsc.sh
+./shsc.sh example.com 200
