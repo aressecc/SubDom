@@ -1,6 +1,6 @@
 # 🔍 Subdomain HTTP Status Checker - Dev by: 𝘼𝙍𝙀𝙎𝙎𝙀𝘾
 
-**shsc** es una herramienta sencilla pero potente para descubrir subdominios de un dominio y verificar su estado HTTP. Utiliza `subfinder` para el descubrimiento de subdominios y `curl` para verificar el código de estado HTTP de esos subdominios. Además, tiene integración con **Nuclei** para hacer un escaneo de vulnerabilidades sobre los subdominios activos.
+𝒔𝒉𝒔𝒄 𝒆𝒔 𝒖𝒏𝒂 𝒉𝒆𝒓𝒓𝒂𝒎𝒊𝒆𝒏𝒕𝒂 𝒔𝒆𝒏𝒄𝒊𝒍𝒍𝒂 𝒑𝒆𝒓𝒐 𝒑𝒐𝒕𝒆𝒏𝒕𝒆 𝒑𝒂𝒓𝒂 𝒅𝒆𝒔𝒄𝒖𝒃𝒓𝒊𝒓 𝒔𝒖𝒃𝒅𝒐𝒎𝒊𝒏𝒊𝒐𝒔 𝒅𝒆 𝒖𝒏 𝒅𝒐𝒎𝒊𝒏𝒊𝒐 𝒚 𝒗𝒆𝒓𝒊𝒇𝒊𝒄𝒂𝒓 𝒔𝒖 𝒆𝒔𝒕𝒂𝒅𝒐 𝑯𝑻𝑻𝑷. 𝑼𝒕𝒊𝒍𝒊𝒛𝒂 𝒔𝒖𝒃𝒇𝒊𝒏𝒅𝒆𝒓 𝒑𝒂𝒓𝒂 𝒆𝒍 𝒅𝒆𝒔𝒄𝒖𝒃𝒓𝒊𝒎𝒊𝒆𝒏𝒕𝒐 𝒅𝒆 𝒔𝒖𝒃𝒅𝒐𝒎𝒊𝒏𝒊𝒐𝒔 𝒚 𝒄𝒖𝒓𝒍 𝒑𝒂𝒓𝒂 𝒗𝒆𝒓𝒊𝒇𝒊𝒄𝒂𝒓 𝒆𝒍 𝒄ó𝒅𝒊𝒈𝒐 𝒅𝒆 𝒆𝒔𝒕𝒂𝒅𝒐 𝑯𝑻𝑻𝑷 𝒅𝒆 𝒆𝒔𝒐𝒔 𝒔𝒖𝒃𝒅𝒐𝒎𝒊𝒏𝒊𝒐𝒔. 𝑨𝒅𝒆𝒎á𝒔, 𝒕𝒊𝒆𝒏𝒆 𝒊𝒏𝒕𝒆𝒈𝒓𝒂𝒄𝒊ó𝒏 𝒄𝒐𝒏 𝑵𝒖𝒄𝒍𝒆𝒊 𝒑𝒂𝒓𝒂 𝒉𝒂𝒄𝒆𝒓 𝒖𝒏 𝒆𝒔𝒄𝒂𝒏𝒆𝒐 𝒅𝒆 𝒗𝒖𝒍𝒏𝒆𝒓𝒂𝒃𝒊𝒍𝒊𝒅𝒂𝒅𝒆𝒔 𝒔𝒐𝒃𝒓𝒆 𝒍𝒐𝒔 𝒔𝒖𝒃𝒅𝒐𝒎𝒊𝒏𝒊𝒐𝒔 𝒂𝒄𝒕𝒊𝒗𝒐𝒔.
 
 ![image](https://github.com/user-attachments/assets/ff4d7597-4014-4449-87e4-e049da54da64)
 ## Características
