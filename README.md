@@ -26,4 +26,17 @@ Puedes instalar `subfinder` y `nuclei` usando los siguientes comandos, obvio ten
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 
+## Instalación
+
+1. Clona el repositorio en tu máquina local:
+
+   ```bash
+   git clone https://github.com/aressecc/shsc.git
+   cd shsc
+   chmod +x shsc.sh
+   Uso: ./shsc.sh <dominio> <codigo_http> [--no-protocol]
+  ./shsc.sh example.com 200
+  ./shsc.sh example.com 200 --no-protocol
+
+
 
