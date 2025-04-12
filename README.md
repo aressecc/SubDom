@@ -47,7 +47,7 @@ Esto es útil para integrarse con otras herramientas como `ffuf`, `nuclei`, o pa
 🛠 Instalación automática
 Podés instalar shsc fácilmente con el siguiente comando:
 
-curl -sSL https://raw.githubusercontent.com/aressecc/shsc/main/install.sh | bash
+curl -sSL https://github.com/aressecc/shsc/blob/main/install.sh | bash
 
 ⚠️ Nota: Asegurate de tener instalado Go previamente, ya que subfinder y nuclei se instalan con go install.
 
