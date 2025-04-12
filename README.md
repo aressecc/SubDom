@@ -20,7 +20,7 @@
 - **figlet**: Para mostrar banners visuales.
 - **nuclei** (opcional): Para escanear vulnerabilidades en los subdominios activos.
 
-Puedes instalar `subfinder` y `nuclei` usando los siguientes comandos:
+Puedes instalar `subfinder` y `nuclei` usando los siguientes comandos, obvio teniendo go instalado:
 
 ```bash
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
