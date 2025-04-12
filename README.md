@@ -2,6 +2,7 @@
 
 Este es un script en Bash creado por **ARESSec** para automatizar el proceso de descubrimiento de subdominios y verificar cuáles están activos a nivel de HTTP/HTTPS, filtrando por un código de respuesta específico como `200`, `403`, `302`, etc.
 
+![image](https://github.com/user-attachments/assets/1df6d8d4-5345-4680-9f15-81218b0b091e)
 
 
 ---
