@@ -41,12 +41,9 @@ Esto es útil para integrarse con otras herramientas como `ffuf`, `nuclei`, o pa
 - [`figlet`](http://www.figlet.org/): Mostrar banners.
 - [`nuclei`](https://github.com/projectdiscovery/nuclei) *(opcional)*: Escaneo de vulnerabilidades.
 
-> 💡 Asegúrate de tener **Go** instalado para poder usar `go install`.
+> 💡 INSTALACION.
 
 ```bash
-go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-
 🛠 Instalación automática
 Podés instalar shsc fácilmente con el siguiente comando:
 
