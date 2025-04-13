@@ -3,7 +3,7 @@
 REPO_URL="https://github.com/aressecc/shsc.git"
 INSTALL_DIR="$HOME/shsc"
 
-# Evitar que se vuelva a ejecutar si ya existe
+# Evitar reejecución si ya fue instalado
 if [[ -d "$INSTALL_DIR" && -f "$HOME/.shsc_installed" ]]; then
     echo "✅ shsc ya fue instalado anteriormente en $INSTALL_DIR. Saliendo..."
     exit 0
@@ -20,24 +20,21 @@ cd "$INSTALL_DIR" || {
     exit 1
 }
 
-# Asegurar permisos al instalador
+# Dar permisos y ejecutar el instalador
 if [[ -f install.sh ]]; then
     echo "🔐 Dando permisos al instalador..."
     chmod +x install.sh
+    echo "🚀 Ejecutando el instalador..."
+    ./install.sh "$@"
 else
-    echo "❌ No se encontró install.sh en $INSTALL_DIR"
+    echo "❌ No se encontró install.sh"
     exit 1
 fi
 
-# Asegurar permisos al script principal
+# Asegurar permisos a shsc.sh después de instalar
 if [[ -f shsc.sh ]]; then
     echo "🔐 Dando permisos a shsc.sh..."
     chmod +x shsc.sh
 else
-    echo "❌ No se encontró shsc.sh en $INSTALL_DIR"
-    exit 1
+    echo "⚠️  Advertencia: shsc.sh no fue encontrado después de la instalación."
 fi
-
-# Ejecutar el instalador
-echo "🚀 Ejecutando el instalador..."
-./install.sh "$@"
