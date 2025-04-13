@@ -87,11 +87,21 @@ if [[ "$skip_go" != true && ! -f "$HOME/go/bin/nuclei" ]]; then
     fi
 fi
 
+# Clonar el repositorio de shsc
+echo "📂 Clonando el repositorio..."
+git clone https://github.com/aressecc/shsc.git ~/shsc
+
 # Dar permisos de ejecución al script principal
-chmod +x "$SCRIPT_DIR/shsc.sh"
+if [[ -f "$HOME/shsc/shsc.sh" ]]; then
+    echo "🔐 Dando permisos a shsc.sh..."
+    chmod +x "$HOME/shsc/shsc.sh"
+else
+    echo "❌ No se encontró el archivo ~/shsc/shsc.sh"
+    exit 1
+fi
 
 # Marcar instalación completada
 touch "$HOME/.shsc_installed"
 
 echo -e "\n✅ Instalación completa. Podés ejecutar shsc con:"
-echo "$SCRIPT_DIR/shsc.sh <dominio> <codigo_http> [--no-protocol]"
+echo "$HOME/shsc/shsc.sh <dominio> <codigo_http> [--no-protocol]"
