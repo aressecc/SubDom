@@ -49,6 +49,6 @@ Podés instalar shsc fácilmente con el siguiente comando:
 
 bash <(curl -s https://raw.githubusercontent.com/aressecc/shsc/main/script.sh)
 
-⚠️ Nota: Asegurate de tener instalado Go previamente, ya que subfinder y nuclei se instalan con go install.
+⚠️ IMPORTANTE: asegurate de añadir tus API KEY a la configuracion de subfinder, de esto depende que funcione mejor la herramienta 
 
 
